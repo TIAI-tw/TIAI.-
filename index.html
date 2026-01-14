@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>台灣人工智慧發展學會（TIAI）</title>
+  <meta name="description" content="台灣人工智慧發展學會（TIAI）— 推動人工智慧教育與產業交流。" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Apple-like Nav -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark"></span>
+          台灣人工智慧發展學會（TIAI）
+        </a>
+
+        <div class="nav-right">
+          <button class="post-btn" type="button" onclick="openPost()">
+            <span class="dotmini"></span> 貼文
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <!-- ✅ 合照 -->
+    <div class="hero-photo-wrap reveal">
+      <img class="hero-photo"
+           src="tiai-group.jpg"
+           alt="台灣人工智慧發展學會（TIAI）活動合照">
+    </div>
+
+    <!-- ✅ Hero -->
+    <div class="hero">
+      <div class="kicker reveal">台灣人工智慧發展學會（TIAI）</div>
+
+      <h1 class="reveal">
+        推動 AI 教育與產業交流<br/>打造跨域合作的學習平台
+      </h1>
+
+      <p class="sub reveal">
+      
+      </p>
+
+      <div class="cta reveal">
+        <a class="btn primary" href="https://www.facebook.com/tiai201810/" target="_blank" rel="noopener">
+          前往 Facebook 粉專
+        </a>
+      </div>
+    </div>
+
+    <!-- ✅ About + Contact（已刪最新動態區塊） -->
+    <section id="about">
+      <div class="grid">
+
+        <div class="section-card reveal">
+          <h2 class="section-title">關於學會</h2>
+          <p class="p">
+            台灣人工智慧發展學會（TIAI）致力於推動人工智慧相關教育、研討活動與產業交流，
+            並透過公開活動與分享，促進更多人了解 AI 應用與發展趨勢。
+          </p>
+
+          <ul class="list">
+            <li class="li"><b>定位</b> 科學、技術與工程類型的推廣與交流平台</li>
+            <li class="li"><b>內容</b> 研討會 / 師資營 / 課程資訊 / 活動紀錄（以粉專貼文為主）</li>
+            <li class="li"><b>入口</b> 以粉專為最新公告主平台，官網作為報名與資訊整合</li>
+          </ul>
+        </div>
+
+        <div class="section-card reveal">
+          <h2 class="section-title">聯絡方式</h2>
+
+          <div class="contact-mini" style="margin-top:14px">
+            <p class="t">📍 地址</p>
+            <p class="d">新莊區中正路510號 輔仁大學羅耀拉大樓403室（新北市）</p>
+          </div>
+
+          <div class="contact-mini" style="margin-top:12px">
+            <p class="t">✉️ 信箱</p>
+            <p class="d">
+              <a href="mailto:tiai201810@gmail.com">tiai201810@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> 台灣人工智慧發展學會（TIAI）｜本頁為粉專資訊整合入口（非 Facebook 官方頁面）
+    </footer>
+  </main>
+
+  <!-- ✅ 彈出貼文視窗（保留 iframe 不刪減） -->
+  <div class="post-overlay" id="postOverlay" onclick="overlayClickClose(event)">
+    <div class="post-modal" role="dialog" aria-modal="true" aria-label="Facebook 貼文">
+      <div class="post-modal-head">
+        <h3 class="post-modal-title">Facebook 文章</h3>
+        <div class="post-close" onclick="closePost()" aria-label="關閉">✕</div>
+      </div>
+
+      <div class="post-modal-body">
+        <p class="hint">點灰色背景或右上角 ✕ 可關閉。</p>
+
+        <div class="embed-wrap" id="postEmbedWrap">
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/photo.php?fbid=971866704728236&set=a.564564862125091&show_text=true&width=780"
+            height="650" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+          <div class="iframe-sep"></div>
+
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/photo.php?fbid=771072681474307&set=a.564564862125091&show_text=true&width=780"
+            height="650" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+          <p class="fb-fallback">
+            若 iframe 仍無法顯示，請直接點：
+            <a href="https://www.facebook.com/photo?fbid=971866704728236&set=a.564564862125091" target="_blank" rel="noopener">第 1 篇</a> /
+            <a href="https://www.facebook.com/photo?fbid=771072681474307&set=a.564564862125091" target="_blank" rel="noopener">第 2 篇</a>
+          </p>
+
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/photo.php?fbid=680651877183055&set=a.564564862125091&show_text=true&width=780"
+            height="650" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/photo.php?fbid=576188160962761&set=a.564564862125091&show_text=true&width=780"
+            height="650" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/photo.php?fbid=1116575639203501&set=a.564564862125091&show_text=true&width=780"
+            height="650" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
