@@ -483,19 +483,35 @@
 
   /* FLOAT + MODAL */
   #autoFlagToast { position:fixed; bottom:90px; right:24px; background:#1a2236; border:1px solid rgba(245,158,11,.4); border-radius:10px; padding:12px 16px; font-size:18px; color:var(--yellow); z-index:500; max-width:300px; line-height:1.7; box-shadow:0 4px 20px rgba(0,0,0,.4); opacity:0; transition:opacity .4s; pointer-events:none; }
-  .float-help { position: fixed; bottom: 24px; right: 24px; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--accent2), #5b21b6); border: none; color: white; font-size:27px; cursor: pointer; box-shadow: 0 4px 20px rgba(124,58,237,.4); z-index: 200; transition: transform .2s; display: none; align-items: center; justify-content: center; }
+  .float-help {
+    position: fixed;
+    bottom: 80px; right: 16px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent2), #5b21b6);
+    border: 2px solid rgba(255,255,255,.15);
+    color: white; font-size: 18px;
+    cursor: grab;
+    box-shadow: 0 4px 16px rgba(124,58,237,.5);
+    z-index: 500;
+    display: none;
+    align-items: center; justify-content: center;
+    touch-action: none; user-select: none;
+    transition: box-shadow .2s, transform .1s;
+  }
   .float-help.visible { display: flex; }
-  .float-help:hover { transform: scale(1.1); }
+  .float-help:hover { transform: scale(1.08); box-shadow: 0 6px 22px rgba(124,58,237,.6); }
+  .float-help.dragging { cursor: grabbing; transform: scale(1.12); transition: none; }
   .modal-overlay { position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,.65); z-index: 9999; display: none; align-items: center; justify-content: center; }
   .modal-overlay.open { display: flex; }
   .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,.6); position: relative; z-index: 10000; }
-  .modal h3 { font-size:22px; font-weight: 700; margin-bottom: 8px; }
-  .modal p { color: var(--text-muted); font-size:18px; margin-bottom: 20px; }
-  .modal textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; color: var(--text); font-family: 'Noto Sans TC', sans-serif; font-size:18px; min-height: 100px; resize: vertical; outline: none; margin-bottom: 16px; }
+  .modal h3 { font-size:17px; font-weight: 700; margin-bottom: 8px; }
+  .modal p { color: var(--text-muted); font-size:13px; margin-bottom: 14px; }
+  .modal textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'Noto Sans TC', sans-serif; font-size:13px; min-height: 80px; resize: vertical; outline: none; margin-bottom: 12px; }
   .modal textarea:focus { border-color: var(--accent); }
   .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
-  .btn-modal-cancel { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 12px 22px; color: var(--text-muted); cursor: pointer; font-family: 'Noto Sans TC', sans-serif; font-size:18px; }
-  .btn-modal-submit { background: linear-gradient(135deg, var(--accent2), #5b21b6); border: none; border-radius: 8px; padding: 12px 22px; color: white; font-family: 'Noto Sans TC', sans-serif; font-weight: 600; font-size:18px; cursor: pointer; }
+  .btn-modal-cancel { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; color: var(--text-muted); cursor: pointer; font-family: 'Noto Sans TC', sans-serif; font-size:13px; }
+  .btn-modal-submit { background: linear-gradient(135deg, var(--accent2), #5b21b6); border: none; border-radius: 8px; padding: 8px 16px; color: white; font-family: 'Noto Sans TC', sans-serif; font-weight: 600; font-size:13px; cursor: pointer; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--surface); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -566,9 +582,9 @@
     .option-btn { font-size:18px; padding: 16px 14px; gap: 12px; }
     .option-btn .opt-key { font-size:18px; min-width: 28px; }
     .answer-feedback { font-size:16px; padding: 16px; }
-    .modal textarea { font-size:14px; padding:10px 12px; min-height:80px; }
+    .modal textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'Noto Sans TC', sans-serif; font-size:13px; min-height: 80px; resize: vertical; outline: none; margin-bottom: 12px; }
     .modal-actions { gap:8px; }
-    .btn-modal-cancel, .btn-modal-submit { font-size:14px; padding:9px 14px; }
+    .btn-modal-cancel, .btn-modal-submit { background: linear-gradient(135deg, var(--accent2), #5b21b6); border: none; border-radius: 8px; padding: 8px 16px; color: white; font-family: 'Noto Sans TC', sans-serif; font-weight: 600; font-size:13px; cursor: pointer; }
     #feedbackQPreview { font-size:13px; padding:10px; }
     .btn-claude { font-size:15px; padding: 12px 18px; }
     .q-nav { flex-wrap: wrap; gap: 8px; padding-right: 60px; }
@@ -631,7 +647,7 @@
     .modal { padding: 16px 14px; }
     .modal h3 { font-size:16px; }
     .modal p { font-size:13px; }
-    .modal textarea { font-size:13px; }
+    .modal textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'Noto Sans TC', sans-serif; font-size:13px; min-height: 80px; resize: vertical; outline: none; margin-bottom: 12px; }
     .q-grid { grid-template-columns: repeat(8, 1fr); }
     .q-dot { width: 30px; height: 30px; font-size:12px; }
     .personal-stats { grid-template-columns: 1fr 1fr; }
@@ -1914,8 +1930,10 @@ function openClaudeForQ(i, fromResult) {
   // 開啟 Claude 分析視窗（不帶 API key，直接用 claude.ai）
   // 使用 claude.ai 免費版（無需帳號即可使用有限次數）
   // 縮短 URL 避免超過瀏覽器長度限制
-  const shortPrompt = prompt.length > 2000 ? prompt.substring(0, 2000) + '...' : prompt;
-  window.open('https://claude.ai/new?q=' + encodeURIComponent(shortPrompt), '_blank');
+  // claude.ai 無需帳號可免費使用有限次數
+  const shortPrompt = prompt.length > 1800 ? prompt.substring(0, 1800) : prompt;
+  const url = 'https://claude.ai/new?q=' + encodeURIComponent(shortPrompt);
+  window.open(url, '_blank');
 
   // 同時用 API 靜默分析是否答案有誤（如果有 API key）
   if (apiKey) {
@@ -2966,6 +2984,83 @@ document.addEventListener('keydown', e => {
 });
 
 init();
+
+// ── 可拖曳浮窗 ──
+(function initDraggable() {
+  const btn = document.getElementById('floatHelp');
+  if (!btn) return;
+  let dragging = false, startX, startY, origX, origY;
+
+  // 讀取上次位置
+  try {
+    const saved = JSON.parse(localStorage.getItem('tiai_fh_pos') || 'null');
+    if (saved) { btn.style.right = 'auto'; btn.style.left = saved.x + 'px'; btn.style.top = saved.y + 'px'; btn.style.bottom = 'auto'; }
+  } catch(e) {}
+
+  function savePos() {
+    const r = btn.getBoundingClientRect();
+    localStorage.setItem('tiai_fh_pos', JSON.stringify({x: r.left, y: r.top}));
+  }
+
+  // Mouse
+  btn.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    dragging = true;
+    btn.classList.add('dragging');
+    const r = btn.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY;
+    origX = r.left; origY = r.top;
+    btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    btn.style.left = origX + 'px'; btn.style.top = origY + 'px';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX, dy = e.clientY - startY;
+    const nx = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, origX + dx));
+    const ny = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, origY + dy));
+    btn.style.left = nx + 'px'; btn.style.top = ny + 'px';
+  });
+  document.addEventListener('mouseup', e => {
+    if (!dragging) return;
+    dragging = false;
+    btn.classList.remove('dragging');
+    savePos();
+  });
+
+  // Touch
+  btn.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    dragging = true;
+    btn.classList.add('dragging');
+    const r = btn.getBoundingClientRect();
+    startX = t.clientX; startY = t.clientY;
+    origX = r.left; origY = r.top;
+    btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    btn.style.left = origX + 'px'; btn.style.top = origY + 'px';
+    e.preventDefault();
+  }, { passive: false });
+  btn.addEventListener('touchmove', e => {
+    if (!dragging) return;
+    const t = e.touches[0];
+    const dx = t.clientX - startX, dy = t.clientY - startY;
+    const nx = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, origX + dx));
+    const ny = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, origY + dy));
+    btn.style.left = nx + 'px'; btn.style.top = ny + 'px';
+    e.preventDefault();
+  }, { passive: false });
+  btn.addEventListener('touchend', e => {
+    if (!dragging) return;
+    dragging = false;
+    btn.classList.remove('dragging');
+    savePos();
+    // 若位移極小視為點擊
+    const r = btn.getBoundingClientRect();
+    const dx = Math.abs(r.left - origX), dy = Math.abs(r.top - origY);
+    if (dx < 5 && dy < 5) openFeedbackModal();
+    e.preventDefault();
+  }, { passive: false });
+})();
 </script>
 </body>
 </html>
