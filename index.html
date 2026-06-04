@@ -557,6 +557,7 @@
 
     /* Quiz layout: full width, no sidebar */
     #quizScreen .quiz-layout { flex-direction: column; }
+    #quizModeTag { display: none; }
     .quiz-sidebar { position: sticky; top: 60px; }
     .q-grid { grid-template-columns: repeat(10, 1fr); gap: 3px; }
     .q-dot { width: 30px; height: 30px; font-size:12px; border-radius: 6px; }
@@ -570,7 +571,7 @@
     .btn-modal-cancel, .btn-modal-submit { font-size:14px; padding:9px 14px; }
     #feedbackQPreview { font-size:13px; padding:10px; }
     .btn-claude { font-size:15px; padding: 12px 18px; }
-    .q-nav { flex-wrap: wrap; gap: 8px; }
+    .q-nav { flex-wrap: wrap; gap: 8px; padding-right: 60px; }
     .btn-nav { font-size:16px; padding: 12px 20px; flex: 1; text-align: center; }
     .btn-flag { font-size:16px; padding: 12px 16px; }
     .q-num { font-size:16px; }
@@ -623,7 +624,7 @@
     .weak-chip { font-size:14px; padding: 4px 12px; }
 
     /* Float help */
-    .float-help { width: 48px; height: 48px; font-size:18px; bottom: 16px; right: 14px; }
+    .float-help { width: 44px; height: 44px; font-size:16px; bottom: 80px; right: 14px; }
   }
 
   @media (max-width: 480px) {
@@ -748,7 +749,7 @@
 <div id="quizScreen" class="screen">
   <nav class="topnav">
     <div class="brand">TIAI · 作答中</div>
-    <div class="nav-links"><span id="quizModeTag" style="font-size:26px;color:var(--text-muted)"></span></div>
+    <div class="nav-links"><span id="quizModeTag" style="font-size:13px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px"></span></div>
     <div class="user-area">
       <button class="btn-logout" onclick="if(confirm('確定要結束本次練習？'))showHome()">結束練習</button>
     </div>
